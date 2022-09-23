@@ -435,6 +435,7 @@ MochaJUnitReporter.prototype.getXml = function(testsuites) {
     _suiteAttr.timestamp = new Date(_suiteAttr.timestamp).toISOString().slice(0, -5);
     _suiteAttr.failures = 0;
     _suiteAttr.skipped = 0;
+    _suiteAttr.file = testsuites[0].testsuite[0]._attr.file;
 
     _cases.forEach(function(testcase) {
       var lastNode = testcase.testcase[testcase.testcase.length - 1];
